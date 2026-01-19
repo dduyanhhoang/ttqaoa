@@ -8,7 +8,7 @@ def qubit_proj(idx):
 
 
 class TimetableProblem:
-    def __init__(self, data, w_section=300, w_conflict=300, w_quota=2.0):
+    def __init__(self, data, w_section=3.0, w_conflict=4.65, w_quota=0.02):
         self.task_list = data["task_list"]
         self.slot_conflict = data["slot_conflict"]
         self.instructor_slot = data["instructor_slot"]
@@ -22,13 +22,17 @@ class TimetableProblem:
         }
 
         # Initialize problem definition
-        self.teachers = sorted(list(self.instructor_skill[list(self.instructor_skill.keys())[0]].keys()))
+        self.teachers = sorted(list(self
+                                    .instructor_skill[list(self.instructor_skill.keys())[0]]
+                                    .keys()))
         self.sections = list(range(len(self.task_list)))
 
         # Pre-process lookups
-        self.instructor_slot_by_teacher = {t: {slot: self.instructor_slot[slot][t] for slot in self.instructor_slot} for
-                                           t in self.teachers}
-        self.instructor_skill_by_teacher = {t: {subj: self.instructor_skill[subj][t] for subj in self.instructor_skill}
+        self.instructor_slot_by_teacher = {t: {slot: self.instructor_slot[slot][t]
+                                               for slot in self.instructor_slot}
+                                           for t in self.teachers}
+        self.instructor_skill_by_teacher = {t: {subj: self.instructor_skill[subj][t]
+                                                for subj in self.instructor_skill}
                                             for t in self.teachers}
 
         # Build Graph / Hamiltonian
@@ -72,6 +76,7 @@ class TimetableProblem:
                         idx1 = self.var_to_idx[(t_idx, s1)]
                         idx2 = self.var_to_idx[(t_idx, s2)]
                         terms.append((self.weights["conflict"] * (qubit_proj(idx1) + qubit_proj(idx2))) ** 2)
+                        # terms.append((2 * self.weights["conflict"]) ** 2 * (qubit_proj(idx1) @ qubit_proj(idx2)))
 
         # 3. Quota Terms (Min/Max classes per teacher)
         for t_idx, teacher in enumerate(self.teachers):

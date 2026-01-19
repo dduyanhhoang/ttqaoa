@@ -3,7 +3,7 @@ from pennylane import numpy as np
 import scipy
 
 
-def solve_qaoa(problem, depth=1, shots=20000, seed=42):
+def solve_qaoa(problem, depth=3, shots=20000, seed=42):
     """
     Runs the QAOA optimization using exact simulation on lightning.qubit,
     then samples the result.

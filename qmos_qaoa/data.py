@@ -10,11 +10,11 @@ def load_local_data(data_dir: Path):
     data_dir = Path(data_dir)
 
     files = {
-        "task": "QAOA_Data_Fall_2025 - Task_easy.csv",
-        "slot_conflict": "QAOA_Data_Fall_2025 - SlotConflict_easy.csv",
-        "instructor_slot": "QAOA_Data_Fall_2025 - InstructorSlot_easy.csv",
-        "instructor_skill": "QAOA_Data_Fall_2025 - InstructorSkill_easy.csv",
-        "instructor_quota": "QAOA_Data_Fall_2025 - InstructorQuota_easy.csv"
+        "task": "Task.csv",
+        "slot_conflict": "SlotConflict.csv",
+        "instructor_slot": "InstructorSlot.csv",
+        "instructor_skill": "InstructorSkill.csv",
+        "instructor_quota": "InstructorQuota.csv"
     }
 
     # Helper to read and clean

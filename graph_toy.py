@@ -6,11 +6,11 @@ from pathlib import Path
 DATA_DIR = Path("data/raw/toy")
 FILES = {
     # The task file containing the 5 toy classes
-    "task": "QAOA_Data_Fall_2025 - Task_easy.csv",
-    "slot_conflict": "QAOA_Data_Fall_2025 - SlotConflict_easy.csv",
-    "instructor_slot": "QAOA_Data_Fall_2025 - InstructorSlot_easy.csv",
-    "instructor_skill": "QAOA_Data_Fall_2025 - InstructorSkill_easy.csv",
-    "instructor_quota": "QAOA_Data_Fall_2025 - InstructorQuota_easy.csv"
+    "task": "Task.csv",
+    "slot_conflict": "SlotConflict.csv",
+    "instructor_slot": "InstructorSlot.csv",
+    "instructor_skill": "InstructorSkill.csv",
+    "instructor_quota": "InstructorQuota.csv"
 }
 OUTPUT_PATH = Path("data/processed/toy_graph_dense.pickle")
 

@@ -23,7 +23,7 @@ def main():
     problem = TimetableProblem(data)
     print(f"Total variables/qubits: {problem.n_qubits}")
 
-    p_depth = 1
+    p_depth = 3
     shots = 20000
 
     samples = solve_qaoa(problem, depth=p_depth, shots=shots)
