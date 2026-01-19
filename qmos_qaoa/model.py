@@ -75,8 +75,8 @@ class TimetableProblem:
                     if self.slot_conflict.get(slot1, {}).get(slot2, 0) == 1:
                         idx1 = self.var_to_idx[(t_idx, s1)]
                         idx2 = self.var_to_idx[(t_idx, s2)]
-                        terms.append((self.weights["conflict"] * (qubit_proj(idx1) + qubit_proj(idx2))) ** 2)
-                        # terms.append((2 * self.weights["conflict"]) ** 2 * (qubit_proj(idx1) @ qubit_proj(idx2)))
+                        # terms.append((self.weights["conflict"] * (qubit_proj(idx1) + qubit_proj(idx2))) ** 2)
+                        terms.append((2 * self.weights["conflict"]) ** 2 * (qubit_proj(idx1) @ qubit_proj(idx2)))
 
         # 3. Quota Terms (Min/Max classes per teacher)
         for t_idx, teacher in enumerate(self.teachers):
