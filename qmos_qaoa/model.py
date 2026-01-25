@@ -8,7 +8,7 @@ def qubit_proj(idx):
 
 
 class TimetableProblem:
-    def __init__(self, data, w_section=3.0, w_conflict=4.65, w_quota=0.02):
+    def __init__(self, data, w_section=3.0, w_conflict=4.65, w_quota=0.6):
         self.task_list = data["task_list"]
         self.slot_conflict = data["slot_conflict"]
         self.instructor_slot = data["instructor_slot"]
@@ -88,10 +88,10 @@ class TimetableProblem:
 
             total_expr = sum([qubit_proj(idx) for idx in relevant_vars])
             qmin = self.instructor_quota[teacher]["Min quota"]
-            qmax = self.instructor_quota[teacher]["Max quota"]
+            # qmax = self.instructor_quota[teacher]["Max quota"]
 
             terms.append((self.weights["quota"] * (total_expr - qmin)) ** 2)
-            terms.append((self.weights["quota"] * (total_expr - qmax)) ** 2)
+            # terms.append((self.weights["quota"] * (total_expr - qmax)) ** 2)
 
         cost_h = reduce(lambda a, b: a + b, terms)
 
