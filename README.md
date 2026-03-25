@@ -47,12 +47,11 @@ uv sync
 **With pip:**
 
 ```bash
-pip install -e .
+pip install -r requirements.txt
 ```
 
-> `pip install -r requirements.txt` alone is **not sufficient** — it installs
-> external dependencies but does not register the local `qmos_qaoa` package.
-> `pip install -e .` reads `pyproject.toml` and installs both.
+> `requirements.txt` includes `-e .` as its first line, so pip installs both
+> the external dependencies and the local `qmos_qaoa` package in one step.
 
 ---
 
