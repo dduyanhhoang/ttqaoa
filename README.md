@@ -48,10 +48,12 @@ uv sync
 
 ```bash
 pip install -r requirements.txt
+pip install -e .
 ```
 
-> `requirements.txt` includes `-e .` as its first line, so pip installs both
-> the external dependencies and the local `qmos_qaoa` package in one step.
+> `pip install -r requirements.txt` installs external dependencies.
+> `pip install -e .` then registers the local `qmos_qaoa` package.
+> Both steps are required.
 
 ---
 
