@@ -1,0 +1,7 @@
+Day,1,2,3,4
+Monday,"A24, A25","A42, A52","P24, P25","P42, P52"
+Tuesday,"A35, A36","A53, A63","P35, P36","P53, P63"
+Wednesday,"A42, A46","A24, A64","P42, P46","P24, P64"
+Thursday,"A52, A53","A25, A35","P52, P53","P25, P35"
+Friday,"A63, A64","A36, A46","P63, P64","P36, P46"
+Saturday,A77,A77,P77,P77

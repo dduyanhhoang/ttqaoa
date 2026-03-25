@@ -1,4 +1,3 @@
-import argparse
 from pathlib import Path
 from qmos_qaoa.data import load_local_data
 from qmos_qaoa.model import TimetableProblem
