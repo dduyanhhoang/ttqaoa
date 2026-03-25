@@ -15,6 +15,9 @@ dependencies = [
     "scipy-stubs>=1.16.3.3",
 ]
 
+[tool.setuptools.packages.find]
+include = ["qmos_qaoa*"]
+
 [dependency-groups]
 dev = [
     "jupyterlab>=4.5.1",
